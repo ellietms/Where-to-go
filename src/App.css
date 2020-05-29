@@ -8,3 +8,29 @@
    box-shadow: 3px 3px 3px 3px #ccc;
  }
 
+ .card {
+  transition: 200ms;
+  cursor: pointer;
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.card-body{
+  border: 1px solid white;
+  max-height: 175px;
+  height: fit-content;
+}
+.card-img {
+  height: 220px;
+  padding-top: 10px;
+  border: 1px solid rgb(200, 185, 185);
+}
+.card-img-top{
+  height: 200px;
+}
+
+.card-text {
+  height: inherit;
+  size: 1rem;
+}

@@ -7,11 +7,20 @@ const Countries = (props) => {
       <div className="row">
           {props.AllCountries.map((eachcountry,index) => {
             return (
-            <div key={index} className="card d-flex col-lg-4  my-2">
-                <img className="card-img-top" src={eachcountry.flag} alt="" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div className="col-7  mx-auto col-sm-9  col-md-6 col-lg-3 col-xl-3 mb-sm-2 mb-md-2 mt-md-3 mb-lg-3 mt-lg-3 p-2">    
+            <div key={index} className="card mt-4 mx-auto">
+            <div className="card-img">    
+            <img className="card-img-top" src={eachcountry.flag} alt="" />
+            </div>  
+            <div class="card-body">
+            <h5 class="card-title">{eachcountry.name}</h5>
+                <div class="d-flex flex-column">
+                    <p className="card-text">Population :{eachcountry.population.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,')}</p>
+                    <p className="card-text">Region :{eachcountry.region}</p>
+                    <p className="card-text">Capital :{eachcountry.capital}</p>
+                </div>
                </div>
+            </div>
             </div>
             );
           })}
