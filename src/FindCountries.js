@@ -5,8 +5,7 @@ import Search from './Search';
 
 const FindCountries = () => {
     return(
-        <Search />
-
+      <Search/>
     )
 
 }

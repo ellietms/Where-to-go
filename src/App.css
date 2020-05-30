@@ -1,3 +1,7 @@
+body{
+  background-color: rgb(234, 234, 241);
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +9,7 @@
 .navbar-head{
    height: 80px;
    font-weight: bolder;
+   background-color:white;
    box-shadow: 3px 3px 3px 3px #ccc;
 }
 
@@ -23,7 +28,7 @@
 i{
   left: 10px;
   padding-top: 10px;
-  color: dodgerblue;
+  color: rgb(148, 187, 226);
 }
 .inputWithIcon input[type = text]:focus + i {
   color: dodgerblue;
@@ -35,6 +40,10 @@ i{
 
 .form-control{
   width: 400px;
+}
+
+.dropdown-color{
+  background-color:white;
 }
  
  .card {

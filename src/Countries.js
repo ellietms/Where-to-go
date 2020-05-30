@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 const Countries = (props) => {
   return (
     <div className="container">
-       <FindCountries />
+      <FindCountries />
       <div className="row">
           {props.AllCountries.map((eachcountry,index) => {
             return (
