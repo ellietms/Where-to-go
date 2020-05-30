@@ -11,6 +11,27 @@
 .input-group > .form-control{
   width:400px;
 }
+.inputWithIcon input[type=text]{
+  padding-left: 40px;
+}
+
+.inputWithIcon{
+  position:relative;
+  color: #aaa;
+  transition: .3s;
+}
+i{
+  left: 10px;
+  padding-top: 10px;
+  color: dodgerblue;
+}
+.inputWithIcon input[type = text]:focus + i {
+  color: dodgerblue;
+}
+
+.inputWithIcon i {
+  position: absolute;
+}
 
 .form-control{
   width: 400px;
