@@ -13,7 +13,7 @@ const Countries = (props) => {
             <img className="card-img-top" src={eachcountry.flag} alt="" />
             </div>  
             <div class="card-body">
-            <h5 class=" card-text-container">{eachcountry.name}</h5>
+            <h5 class="card-title card-text-container">{eachcountry.name}</h5>
                 <div class="card-text-container">
                     <p className="card-text">Population :{eachcountry.population.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,')}</p>
                     <p className="card-text">Region :{eachcountry.region}</p>
