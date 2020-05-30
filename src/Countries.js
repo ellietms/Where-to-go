@@ -13,11 +13,11 @@ const Countries = (props) => {
             <img className="card-img-top" src={eachcountry.flag} alt="" />
             </div>  
             <div class="card-body">
-            <h5 class="card-title card-text-container">{eachcountry.name}</h5>
+            <span class="card-title card-text-container">{eachcountry.name}</span>
                 <div class="card-text-container">
-                    <p className="card-text">Population :{eachcountry.population.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,')}</p>
-                    <p className="card-text">Region :{eachcountry.region}</p>
-                    <p className="card-text">Capital :{eachcountry.capital}</p>
+                    <p className="card-text">Population: <span className="text-muted">{eachcountry.population.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,')}</span></p>
+                    <p className="card-text">Region: <span className="text-muted">{eachcountry.region}</span></p>
+                    <p className="card-text">Capital: <span className="text-muted">{eachcountry.capital}</span></p>
                 </div>
                </div>
             </div>
