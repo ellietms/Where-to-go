@@ -22,12 +22,14 @@
 .card-title{  
   display: inline-flex;
   font-weight: bolder;
-
+  font-size: 15px;
+  padding-left: 10px;
 }
 
 .card-body{
-  border: 1px solid white;
+  border: 0.2px solid whitesmoke;
   height: 200px;
+  padding-left: 2px;
 }
 .card-img {
   height: 180px;
@@ -48,4 +50,5 @@
 .card-text {
   font-size: medium;
   margin-bottom: 1px;
+  padding-left: 0.5rem;
 }
