@@ -1,11 +1,9 @@
 import React from "react";
-import FindCountries from './FindCountries'
 import "bootstrap/dist/css/bootstrap.css";
 
 const Countries = (props) => {
   return (
     <div className="container">
-      <FindCountries />
       <div className="row">
           {props.AllCountries.map((eachcountry,index) => {
             return (

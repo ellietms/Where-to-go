@@ -1,11 +1,13 @@
-import React from 'react';
+import React , {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Search from './Search';
 
 
-const FindCountries = () => {
+const FindCountries = (props) => {
     return(
-      <Search/>
+      <div className="container">
+      <Search value={props.value} handleChange={props.handleChange} />
+      </div>
     )
 
 }
