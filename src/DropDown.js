@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const DropDown = () => {
+const DropDown = ({handleAll,handleAfrica,handleAsia,handleAmerica,handleEurope,handleOceania}) => {
     return(
     <div className="navbar  navbar-expand-lg  col-4 pb-5 col-md-3 py-md-auto px-md-auto   pl-4  col-lg-2 pb-lg-5 p-lg-2 col-xl-2 pl-xl- navbar-light">
     <div className="dropdown pt-5">
@@ -9,11 +9,12 @@ const DropDown = () => {
     Filter by Region
     </button>
     <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button className="dropdown-item" type="button">Africa</button>
-    <button className="dropdown-item" type="button">America</button>
-    <button className="dropdown-item" type="button">Asia</button>
-    <button className="dropdown-item" type="button">Europe</button>
-    <button className="dropdown-item" type="button">Oceania</button>
+    <button onClick={handleAll} className="dropdown-item" type="button">All Region</button>  
+    <button onClick={handleAfrica} className="dropdown-item" type="button">Africa</button>
+    <button onClick={handleAmerica} className="dropdown-item" type="button">America</button>
+    <button onClick={handleAsia} className="dropdown-item" type="button">Asia</button>
+    <button onClick={handleEurope} className="dropdown-item" type="button">Europe</button>
+    <button onClick={handleOceania} className="dropdown-item" type="button">Oceania</button>
   </div>
 </div>         
         </div>  
