@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Countries = ({ countries , handlePage , handleCountryName}) => {
-
-  
-
   return (
     <div className="container">
       <div className="row">
         {countries.map((eachcountry, index) => {
-          return (
+          // {() => getAlphaCodes(eachcountry);}
+           return (
             <div
               key={index}
               className="col-7  mx-auto col-sm-9  col-md-6 col-lg-3 
