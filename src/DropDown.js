@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.css";
 const DropDown = ({ handleAll, handleRegion }) => {
   return (
     <div
-      className="navbar  navbar-expand-lg  col-4 pb-5 col-md-3 py-md-auto 
-    px-md-auto   pl-4  col-lg-2 pb-lg-5 p-lg-2 col-xl-2 pl-xl- navbar-light"
+      className="navbar  navbar-expand-lg ml-auto  col-4 pb-5 col-md-3 py-md-auto 
+    px-md-auto pl-4  col-lg-2 pb-lg-5 p-lg-2 col-xl-2 pl-xl-3 navbar-light"
     >
       <div className="dropdown pt-5">
         <button

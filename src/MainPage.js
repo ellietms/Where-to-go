@@ -64,7 +64,6 @@ return (
     <Countries countries={filteredCountries} 
     handlePage = {() => setShowMainPage(!showMainPage)}
     handleCountryName = {(eachcountry) => handleCountryName(eachcountry)}
-    // getAlphaCodes={(country) => getAlphaCodes(country)}
     />
 
     </div>

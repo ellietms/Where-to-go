@@ -13,9 +13,6 @@ body{
    box-shadow: 3px 3px 3px 3px #ccc;
 }
 
-.input-group > .form-control{
-  width:400px;
-}
 .inputWithIcon input[type=text]{
   padding-left: 40px;
 }
@@ -24,12 +21,18 @@ body{
   position:relative;
   color: #aaa;
   transition: .3s;
+  margin:auto 15px;
 }
+.search-container{
+  margin-left: 0;
+}
+
 i{
   left: 10px;
   padding-top: 10px;
   color: rgb(148, 187, 226);
 }
+
 .inputWithIcon input[type = text]:focus + i {
   color: dodgerblue;
 }
@@ -46,12 +49,12 @@ i{
   background-color:white;
 }
  
- .card {
+.card {
   transition: 200ms;
   cursor: pointer;
   height: 350px;
-
 }
+
 .card:hover{
   transform: scale(1.05);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -69,11 +72,13 @@ i{
   height: 200px;
   padding-left: 2px;
 }
+
 .card-img {
   height: 180px;
   padding-top: 0px;
   border: 0.3px solid rgb(241, 232, 232);
 }
+
 .card-img-top{
   height: 180px;
 }
@@ -107,9 +112,4 @@ i{
 
 .info-container{
   display: flex;
-}
-
-.btn {
-  margin-top: 5%;
-  width: fit-content;
 }
