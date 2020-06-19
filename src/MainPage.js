@@ -15,11 +15,6 @@ const MainPAge = () => {
   const [countryName,setCountryName] = useState(null);
   const [alphaCodes,setAlphaCodes] = useState();
   const [nameOfBorders,setNameOfBorders]= useState([]);
-//   const [mode,setChangeMode]=useState(true)
-  
-//   function changeMode(){
-//       setChangeMode(!mode);
-//   }
 
 
   function handleCountryName(eachcountry){
@@ -29,6 +24,7 @@ const MainPAge = () => {
     console.log(alphaCodes);
   }
 
+  //This function is not complete and does not make buttons   
   function getNameOfCountryBorders(country){
       setNameOfBorders(country.borders);
       alphaCodes.forEach((country) => {
