@@ -27,7 +27,7 @@ const DropDown = ({ handleAll, handleRegion }) => {
             All Region
           </button>
           <button
-            onClick={() => handleRegion("Africa")}
+            onClick={() => handleRegion("Africa")} {/*This is pretty repetative - rather than hard-coding the regions in the DropDown, could you somehow work out what the list of regions is from the countries array (maybe passing the list of regions in as a prop)? */}
             className="dropdown-item"
             type="button"
           >
