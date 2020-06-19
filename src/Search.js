@@ -19,8 +19,7 @@ const Search = ({ value, handleChange, handleAll, handleRegion }) => {
             aria-describedby="basic-addon1"
           />
         </div>
-        <DropDown handleRegion={handleRegion} 
-        handleAll={() => handleAll()} />
+        <DropDown handleRegion={handleRegion} handleAll={() => handleAll()} />
       </nav>
       <div></div>
     </div>

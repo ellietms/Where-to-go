@@ -14,7 +14,7 @@ const MainPAge = () => {
   ).filter((country) =>
     searchcountry === ""
       ? true
-      : country.name.toLowerCase().includes (searchcountry) ||
+      : country.name.toLowerCase().includes(searchcountry) ||
         country.capital.toLowerCase().includes(searchcountry)
   );
   return (
@@ -22,7 +22,9 @@ const MainPAge = () => {
       <Header />
       <Search
         value={searchcountry}
-        handleChange={(event) => {setSearchCountry(event.target.value)} }
+        handleChange={(event) => {
+          setSearchCountry(event.target.value);
+        }}
         handleRegion={(region) => setContinentFilter(region)}
         handleAll={() => setContinentFilter(null)}
       />
