@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import Search from "./Search";
 
 const MainPAge = () => {
+
+
   const [searchcountry, setSearchCountry] = useState("");
   const [continentFilter, setContinentFilter] = useState(null);
   const [showMainPage,setShowMainPage] = useState(true);
@@ -24,6 +26,7 @@ const MainPAge = () => {
     setCountryName(eachcountry);
     setAlphaCodes([{name: eachcountry.name, alphaCode: eachcountry.alpha3Code}])
     console.log(eachcountry);
+    console.log(alphaCodes);
   }
 
   function getNameOfCountryBorders(country){
@@ -31,8 +34,9 @@ const MainPAge = () => {
       alphaCodes.forEach((country) => {
           if(nameOfBorders.includes(country.alphaCode.toUpperCase())){
             return(
-             <button type="button" class="mr-1 btn btn-sm btn-outline-dark"> 
-            <p class="content pt-1">{country.name}</p></button>
+            <button type="button" className="mr-1 btn btn-sm btn-outline-dark"> 
+            <p class="content pt-1">{country.name}</p>
+            </button>
             )
           }
         }
