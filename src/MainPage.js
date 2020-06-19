@@ -1,64 +1,34 @@
-import React,{useState} from 'react';
-import Header  from './Header';
-import Data from './data.json';
-import FindCountries from './FindCountries'
-import Countries from './Countries';
-import 'bootstrap/dist/css/bootstrap.css';
-
+import React, { useState } from "react";
+import Header from "./Header";
+import Data from "./data.json";
+import Countries from "./Countries";
+import "bootstrap/dist/css/bootstrap.css";
+import Search from "./Search";
 
 const MainPAge = () => {
-    const[searchcountry,setSearchCountry] = useState("");
-    const[filteredCountry, setFilteredCountries] = useState(Data);
+  const [searchcountry, setSearchCountry] = useState("");
+  const [continentFilter, setContinentFilter] = useState(null);
 
-    const Africa =  Data.filter((element) => element.region === "Africa");
-    const Asia = Data.filter((element) => element.region === "Asia");
-    const America = Data.filter((element) => element.region === "Americas");
-    const Europe = Data.filter((element) => element.region === "Europe");
-    const Oceania = Data.filter((element) => element.region === "Oceania");
-
-
-    function handleChange (event){
-    setSearchCountry(event.target.value);
-    } 
-    function handleAll(){
-       setFilteredCountries(Data);
-    }
-    function handleAfrica(){
-        setFilteredCountries(Africa);
-    }
-    function handleAsia () {
-        setFilteredCountries(Asia);
-    }
-    function handleAmerica(){
-        setFilteredCountries(America);
-    }
-    function handleEurope(){
-        setFilteredCountries(Europe);
-    }
-    function handleOceania(){
-        setFilteredCountries(Oceania);
-    }
-    filteredCountry.filter((element) => {
-        return (
-           ((element.name.toLowerCase().includes(searchcountry.toLowerCase())) ||
-            (element.capital.toLowerCase().includes(searchcountry.toLowerCase())) )
-          )
-      })
-    return (
-        <div>
-        <Header />
-        <FindCountries value={searchcountry}
-         handleChange={handleChange}
-         handleAfrica={handleAfrica}
-         handleAsia={handleAsia}
-         handleAmerica={handleAmerica}
-         handleEurope={handleEurope}
-         handleOceania={handleOceania}
-         handleAll={handleAll}/>
-
-        <Countries filteredCountry={filteredCountry} />
-        </div>
-    )
-}
+  const filteredCountries = Data.filter((country) =>
+    continentFilter === null ? true : country.region === continentFilter
+  ).filter((country) =>
+    searchcountry === ""
+      ? true
+      : country.name.toLowerCase().includes (searchcountry) ||
+        country.capital.toLowerCase().includes(searchcountry)
+  );
+  return (
+    <div>
+      <Header />
+      <Search
+        value={searchcountry}
+        handleChange={(event) => {setSearchCountry(event.target.value)} }
+        handleRegion={(region) => setContinentFilter(region)}
+        handleAll={() => setContinentFilter(null)}
+      />
+      <Countries countries={filteredCountries} />
+    </div>
+  );
+};
 
 export default MainPAge;

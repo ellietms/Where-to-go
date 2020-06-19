@@ -1,27 +1,30 @@
 import React from "react";
-import DropDown from './DropDown';
-import 'bootstrap/dist/css/bootstrap.css';
+import DropDown from "./DropDown";
+import "bootstrap/dist/css/bootstrap.css";
 
-
-const Search = ({value,handleChange,handleAll,handleAfrica,handleAsia,handleAmerica,handleEurope,handleOceania}) => {
-return( 
+const Search = ({ value, handleChange, handleAll, handleRegion }) => {
+  return (
     <div className="d-flex">
-        <nav class="navbar d-flex col-12 col-sm-12">
-                    <div class="inputWithIcon">
-                    <i class="fas fa-search-location"></i>
-                    <input type="text" value={value} onChange={handleChange} id="searchInput" class="form-control  border border-dark" placeholder="search for a country..." aria-label="Username" aria-describedby="basic-addon1"/>
-                    </div>
-                    <DropDown handleAfrica={handleAfrica}
-                    handleAsia={handleAsia}
-                    handleAmerica={handleAmerica}
-                    handleEurope={handleEurope}
-                    handleOceania={handleOceania}
-                    handleAll={handleAll}/>
-        </nav>
-    <div>
-    </div>   
-    </div>  
-)
-}
+      <nav className="navbar d-flex col-12 col-sm-12">
+        <div className="inputWithIcon">
+          <i className="fas fa-search-location"></i>
+          <input
+            type="text"
+            value={value}
+            onChange={(event) => handleChange(event)}
+            id="searchInput"
+            className="form-control  border border-dark"
+            placeholder="search for a country..."
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <DropDown handleRegion={handleRegion} 
+        handleAll={() => handleAll()} />
+      </nav>
+      <div></div>
+    </div>
+  );
+};
 
 export default Search;
