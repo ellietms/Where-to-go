@@ -13,17 +13,18 @@ const MainPAge = () => {
   const [countryName,setCountryName] = useState(null);
   const [alphaCodes,setAlphaCodes] = useState();
   const [nameOfBorders,setNameOfBorders]= useState([]);
+//   const [mode,setChangeMode]=useState(true)
   
-  
+//   function changeMode(){
+//       setChangeMode(!mode);
+//   }
+
+
   function handleCountryName(eachcountry){
     setCountryName(eachcountry);
     setAlphaCodes([{name: eachcountry.name, alphaCode: eachcountry.alpha3Code}])
     console.log(eachcountry);
   }
-
-//   function getAlphaCodes(country){
-//     ;
-//   }
 
   function getNameOfCountryBorders(country){
       setNameOfBorders(country.borders);
@@ -38,7 +39,6 @@ const MainPAge = () => {
       )
     }   
   
-
   const filteredCountries = Data.filter((country) =>
     continentFilter === null ? true : country.region === continentFilter
     ).filter((country) =>
@@ -50,7 +50,7 @@ const MainPAge = () => {
 
 return (
     <div>
-    {(showMainPage) ?  
+     {(showMainPage) ?  
     (
     <div>     
     <Header/>

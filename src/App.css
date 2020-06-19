@@ -97,10 +97,20 @@ i{
 }
 
 /* country Info */
+.info-page{
+  display: flex;
+  justify-content: flex-start;
+  margin: auto auto;
+  margin-top: 10%;
+  padding-left: 0%;
+}
+.back-button{
+  margin-left: auto;
+}
 .image-container{
   display: flex;
   justify-content: space-around;
-  margin-right: 20px;
+  margin-left: 2px;
 }
 .countryImg {
   margin-top: 5%;
@@ -110,6 +120,11 @@ i{
   height: 370px;
 }
 
-.info-container{
+.information-country{
   display: flex;
+  margin-top: 2rem;
+}
+
+.country-details{
+  margin-top: 2rem;
 }

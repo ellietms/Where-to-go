@@ -5,15 +5,17 @@ import './App.css';
 
 const CountryInfo = ({country,getNameOfCountryBorders,handlePage}) => {
     const nameOfCountry = getNameOfCountryBorders(country);
-    return(   
+    return(      
     <div className="container">
-        <button type="button" className="mt-2" onClick = {() => handlePage()}>Back</button>  
-        <div className="row"> 
-            <div className="image-container">
-                <img  className="mr-auto countryImg" src={country.flag}/>
+    <div className="info-page"> 
+        <div className="mx-5 mb-5">
+        <button type="button" className="border border-secondary" onClick = {() => handlePage()}>Back</button>  
+        </div> 
+            <div className="image-container mt-5">
+                <img  className="countryImg" src={country.flag}/>
             </div>
-            <div className="info-container">
-                <h5 className="mt-xs-4 pt-sm-4 mt-sm-4 mt-md-3 mt-lg-3 d-flex">
+            <div className="information-country">
+                <h5 className="mt-xs-4 pt-sm-4 mt-sm-4 mt-md-3 mt-lg-3 m-auto">
                     {country.name} 
                 </h5>
                 <div className="mt-sm-5 d-flex justify-content-between">
@@ -39,7 +41,7 @@ const CountryInfo = ({country,getNameOfCountryBorders,handlePage}) => {
                         {country.capital}
                          </p>
                      </div>
-                    <div class = " d-flex flex-column  col-sm-6" >
+                    <div class = " d-flex flex-column  col-sm-6 country-details" >
                         <p class = "d-flex">
                         <strong id="details-right" class="mr-1">Top Level Domain:</strong>
                             {country.topLevelDomain[0]}

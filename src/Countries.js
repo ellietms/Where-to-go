@@ -6,7 +6,6 @@ const Countries = ({ countries , handlePage , handleCountryName}) => {
     <div className="container">
       <div className="row">
         {countries.map((eachcountry, index) => {
-          // {() => getAlphaCodes(eachcountry);}
            return (
             <div
               key={index}
