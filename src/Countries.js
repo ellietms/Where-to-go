@@ -1,7 +1,7 @@
 import React  from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const Countries = ({ countries , handlePage , handleCountryName}) => {
+const Countries = ({ countries , handlePage , setMyCountryName}) => {
   return (
     <div className="container">
       <div className="row">
@@ -11,7 +11,7 @@ const Countries = ({ countries , handlePage , handleCountryName}) => {
               key={index}
               className="col-7  mx-auto col-sm-9  col-md-6 col-lg-3 
               col-xl-3 mb-sm-2 mb-md-2 mt-md-3 mb-lg-3 mt-lg-3 p-2"
-              onClick = {() => {handleCountryName(eachcountry)}}
+              onClick = {() => {setMyCountryName(eachcountry)}}
             >
               <div key={index} className="card mt-4 mx-auto">
                 <div className="card-img">

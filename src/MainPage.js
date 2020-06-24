@@ -13,7 +13,7 @@ const MainPAge = () => {
 
 
 
-  function handleCountryName(eachcountry){
+  function setMyCountryName(eachcountry){
     setCountryName(eachcountry);
   }
 
@@ -49,7 +49,7 @@ const MainPAge = () => {
         />
     
         <Countries countries={filteredCountries} 
-        handleCountryName = {(eachcountry) => handleCountryName(eachcountry)}
+        setMyCountryName = {(eachcountry) => setMyCountryName(eachcountry)}
         />
     
         </div>
