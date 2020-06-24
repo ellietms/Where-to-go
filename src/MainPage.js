@@ -13,8 +13,8 @@ const MainPAge = () => {
 
 
 
-  function setMyCountryName(eachcountry){
-    setCountryName(eachcountry);
+  function setMyCountryName(country){
+    setCountryName(country);
   }
 
   //This function is not complete and does not make buttons   

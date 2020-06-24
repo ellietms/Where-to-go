@@ -1,7 +1,7 @@
 import React  from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const Countries = ({ countries , handlePage , setMyCountryName}) => {
+const Countries = ({ countries , setMyCountryName}) => {
   return (
     <div className="container">
       <div className="row">
