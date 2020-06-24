@@ -7,37 +7,26 @@ import "bootstrap/dist/css/bootstrap.css";
 import Search from "./Search";
 
 const MainPAge = () => {
-
-
   const [searchcountry, setSearchCountry] = useState("");
   const [continentFilter, setContinentFilter] = useState(null);
-  const [showMainPage,setShowMainPage] = useState(true);
   const [countryName,setCountryName] = useState(null);
-  const [alphaCodes,setAlphaCodes] = useState();
-  const [nameOfBorders,setNameOfBorders]= useState([]);
+
 
 
   function handleCountryName(eachcountry){
     setCountryName(eachcountry);
-    setAlphaCodes([{name: eachcountry.name, alphaCode: eachcountry.alpha3Code}])
-    console.log(eachcountry);
-    console.log(alphaCodes);
   }
 
   //This function is not complete and does not make buttons   
-  function getNameOfCountryBorders(country){
-      setNameOfBorders(country.borders);
-      alphaCodes.forEach((country) => {
-          if(nameOfBorders.includes(country.alphaCode.toUpperCase())){
-            return(
+  function getNameOfCountryBorders(){
+       return (Data.filter(country => countryName.borders.includes(country.alphaCode.toUpperCase()))
+       .map(country => (   
             <button type="button" className="mr-1 btn btn-sm btn-outline-dark"> 
             <p class="content pt-1">{country.name}</p>
             </button>
-            )
-          }
-        }
-      )
-    }   
+            )))
+  }   
+         
   
   const filteredCountries = Data.filter((country) =>
     continentFilter === null ? true : country.region === continentFilter
@@ -47,34 +36,35 @@ const MainPAge = () => {
       : country.name.toLowerCase().includes(searchcountry) ||
         country.capital.toLowerCase().includes(searchcountry)
     )
-
-return (
-    <div>
-     {(showMainPage) ?  
-    (
-    <div>     
-    <Header/>
-    <Search
-    value={searchcountry}
-    handleChange={(event) => {setSearchCountry(event.target.value)}}
-    handleRegion={(region) => setContinentFilter(region)}
-    handleAll={() => setContinentFilter(null)}
-    />
-
-    <Countries countries={filteredCountries} 
-    handlePage = {() => setShowMainPage(!showMainPage)}
-    handleCountryName = {(eachcountry) => handleCountryName(eachcountry)}
-    />
-
-    </div>
-    )
-     : 
-    (  
-    < CountryInfo country={countryName}
-    getNameOfCountryBorders={(country) => getNameOfCountryBorders(country)}
-    handlePage = {() => setShowMainPage(!showMainPage)}/>
-    )
+   let mainContent;
+    if(countryName === null){
+     mainContent = ( 
+        <div>     
+        <Header/>
+        <Search
+        value={searchcountry}
+        handleChange={(event) => {setSearchCountry(event.target.value)}}
+        handleRegion={(region) => setContinentFilter(region)}
+        handleAll={() => setContinentFilter(null)}
+        />
+    
+        <Countries countries={filteredCountries} 
+        handleCountryName = {(eachcountry) => handleCountryName(eachcountry)}
+        />
+    
+        </div>
+        )
     }
+    else{
+      mainContent = ( 
+      < CountryInfo country={countryName}
+      getNameOfCountryBorders={() => getNameOfCountryBorders()}
+      handlePage = {() =>  setCountryName(null)}/>
+      )
+    }
+return (
+    <div> 
+    {mainContent}
     </div>
   );
 }

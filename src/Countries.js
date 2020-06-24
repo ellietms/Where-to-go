@@ -11,18 +11,17 @@ const Countries = ({ countries , handlePage , handleCountryName}) => {
               key={index}
               className="col-7  mx-auto col-sm-9  col-md-6 col-lg-3 
               col-xl-3 mb-sm-2 mb-md-2 mt-md-3 mb-lg-3 mt-lg-3 p-2"
-              onClick = {() => {handlePage();
-              handleCountryName(eachcountry)}}
+              onClick = {() => {handleCountryName(eachcountry)}}
             >
               <div key={index} className="card mt-4 mx-auto">
                 <div className="card-img">
                   <img className="card-img-top" src={eachcountry.flag} alt="" />
                 </div>
-                <div key={index} class="card-body">
-                  <span class="card-title card-text-container">
+                <div key={index} className="card-body">
+                  <span className="card-title card-text-container">
                     {eachcountry.name}
                   </span>
-                  <div class="card-text-container">
+                  <div className="card-text-container">
                     <p className="card-text">
                       Population:{" "}
                       <span className="text-muted">

@@ -4,7 +4,8 @@ import './App.css';
 
 
 const CountryInfo = ({country,getNameOfCountryBorders,handlePage}) => {
-    const nameOfCountry = getNameOfCountryBorders(country);
+    const nameOfCountry = getNameOfCountryBorders();
+    console.log(nameOfCountry);
     return(      
     <div className="container">
     <div className="info-page"> 
@@ -50,10 +51,10 @@ const CountryInfo = ({country,getNameOfCountryBorders,handlePage}) => {
                         <strong id="details-right">Currencies:</strong>
                             {country.currencies.map((currency) => currency.code)}
                          </p>
-                        <p class = "d-flex">
+                        <div class = "d-flex">
                         <strong id="details-right">Languages:</strong>
                         <p class="flex-sm-column">{country.languages.map((language) => language.name)}</p>
-                        </p>
+                        </div>
                     </div>
                     <div class="col-12">
                     <p class="d-flex d-lg-inline-flex mr-lg-0 col-lg-4

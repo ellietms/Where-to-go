@@ -16,7 +16,7 @@ const Search = ({ value, handleChange, handleAll, handleRegion }) => {
             id="searchInput"
             className="form-control  border border-dark mr-auto"
             placeholder="search for a country..."
-            aria-label="Username"
+            aria-label="search"
             aria-describedby="basic-addon1"
           />
         </div>
