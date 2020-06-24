@@ -1,17 +1,19 @@
-import React  from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const Countries = ({ countries , setMyCountryName}) => {
+const Countries = ({ countries, setMyCountryName }) => {
   return (
     <div className="container">
       <div className="row">
         {countries.map((eachcountry, index) => {
-           return (
+          return (
             <div
               key={index}
               className="col-7  mx-auto col-sm-9  col-md-6 col-lg-3 
               col-xl-3 mb-sm-2 mb-md-2 mt-md-3 mb-lg-3 mt-lg-3 p-2"
-              onClick = {() => {setMyCountryName(eachcountry)}}
+              onClick={() => {
+                setMyCountryName(eachcountry);
+              }}
             >
               <div key={index} className="card mt-4 mx-auto">
                 <div className="card-img">

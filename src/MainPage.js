@@ -26,8 +26,9 @@ const MainPAge = () => {
     ));
   }
 
-  const filteredCountries = Data.filter((country) => continentFilter === null || country.region === continentFilter)
-  .filter((country) =>
+  const filteredCountries = Data.filter(
+    (country) => continentFilter === null || country.region === continentFilter
+  ).filter((country) =>
     searchcountry === ""
       ? true
       : country.name.toLowerCase().includes(searchcountry) ||
