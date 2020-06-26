@@ -2,9 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
-const CountryInfo = ({ country, getNameOfCountryBorders, handlePage }) => {
-  const nameOfCountry = getNameOfCountryBorders();
-  console.log(nameOfCountry);
+const CountryInfo = ({country,borderCountries,showAllCountries,showBorderCountry}) => {
+
   return (
     <div className="container">
       <div className="info-page">
@@ -12,7 +11,7 @@ const CountryInfo = ({ country, getNameOfCountryBorders, handlePage }) => {
           <button
             type="button"
             className="border border-secondary"
-            onClick={() => handlePage()}
+            onClick={() => showAllCountries()}
           >
             Back
           </button>
@@ -76,7 +75,11 @@ const CountryInfo = ({ country, getNameOfCountryBorders, handlePage }) => {
                 class="col-lg-6 mt-sm-1 mt-md-0 d-sm-flex 
                     flex-md-column flex-lg-row d-lg-inline-flex"
               >
-                {nameOfCountry}
+                {borderCountries.map(country => 
+                 <button onClick={() => showBorderCountry(country)}>
+                   {country.name}
+                 </button> 
+                )}
               </span>
             </div>
           </div>

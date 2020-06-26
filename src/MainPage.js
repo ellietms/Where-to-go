@@ -9,22 +9,8 @@ import Search from "./Search";
 const MainPAge = () => {
   const [searchcountry, setSearchCountry] = useState("");
   const [continentFilter, setContinentFilter] = useState(null);
-  const [countryName, setCountryName] = useState(null);
-
-  function setMyCountryName(country) {
-    setCountryName(country);
-  }
-
-  //This function is not complete and does not make buttons
-  function getNameOfCountryBorders() {
-    return Data.filter((country) =>
-      countryName.borders.includes(country.alphaCode.toUpperCase())
-    ).map((country) => (
-      <button type="button" className="mr-1 btn btn-sm btn-outline-dark">
-        <p class="content pt-1">{country.name}</p>
-      </button>
-    ));
-  }
+  const [selectedCountry, setselectedCountry] = useState(null);
+  console.log(selectedCountry)
 
   const filteredCountries = Data.filter(
     (country) => continentFilter === null || country.region === continentFilter
@@ -34,8 +20,12 @@ const MainPAge = () => {
       : country.name.toLowerCase().includes(searchcountry) ||
         country.capital.toLowerCase().includes(searchcountry)
   );
+    const allAlpha3codes =
+     Data.map(country => setselectedCountry[{name:country.name,alpha3Code:country.alpha3Code}]);
+    console.log(allAlpha3codes);
+
   let mainContent;
-  if (countryName === null) {
+  if (selectedCountry === null) {
     mainContent = (
       <div>
         <Header />
@@ -50,16 +40,20 @@ const MainPAge = () => {
 
         <Countries
           countries={filteredCountries}
-          setMyCountryName={(eachcountry) => setMyCountryName(eachcountry)}
+          setselectedCountry={setselectedCountry}
         />
       </div>
     );
   } else {
+
+    const borderCountries = Data.filter(possibleBorderCountry => selectedCountry.borders.includes(possibleBorderCountry.alpha3Code))
+    //  Data.map(country => country.borders)
     mainContent = (
       <CountryInfo
-        country={countryName}
-        getNameOfCountryBorders={() => getNameOfCountryBorders()}
-        handlePage={() => setCountryName(null)}
+        country={selectedCountry}
+        borderCountries = {borderCountries}
+        showAllCountries={() => setselectedCountry(null)}
+        showBorderCountry = {setselectedCountry}
       />
     );
   }
