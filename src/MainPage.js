@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Search from "./Search";
 
 const MainPAge = () => {
+
   const [searchcountry, setSearchCountry] = useState("");
   const [continentFilter, setContinentFilter] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState(null);
@@ -19,10 +20,6 @@ const MainPAge = () => {
     country.name.toLowerCase().includes(searchcountry) ||
     country.capital.toLowerCase().includes(searchcountry)
   );
-
-  // const allAlpha3codes =
-  // Data.map(country => setSelectedCountry[{name:country.name,alpha3Code:country.alpha3Code}]);
-  
 
   let mainContent;
   if (selectedCountry === null) {
@@ -47,7 +44,6 @@ const MainPAge = () => {
   } else {
 
     const borderCountries = Data.filter(possibleBorderCountry => selectedCountry.borders.includes(possibleBorderCountry.alpha3Code))
-    //  Data.map(country => country.borders)
     mainContent = (
       <CountryInfo
         country={selectedCountry}
