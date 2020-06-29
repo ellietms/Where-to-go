@@ -2,8 +2,12 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
-const CountryInfo = ({country,borderCountries,showAllCountries,showBorderCountry}) => {
-
+const CountryInfo = ({
+  country,
+  borderCountries,
+  showAllCountries,
+  showBorderCountry,
+}) => {
   return (
     <div className="container">
       <div className="info-page">
@@ -75,11 +79,11 @@ const CountryInfo = ({country,borderCountries,showAllCountries,showBorderCountry
                 class="col-lg-6 mt-sm-1 mt-md-0 d-sm-flex 
                     flex-md-column flex-lg-row d-lg-inline-flex"
               >
-                {borderCountries.map(country => 
-                 <button onClick={() => showBorderCountry(country)}>
-                   {country.name}
-                 </button> 
-                )}
+                {borderCountries.map((country) => (
+                  <button onClick={() => showBorderCountry(country)}>
+                    {country.name}
+                  </button>
+                ))}
               </span>
             </div>
           </div>

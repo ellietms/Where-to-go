@@ -10,15 +10,14 @@ const MainPAge = () => {
   const [searchcountry, setSearchCountry] = useState("");
   const [continentFilter, setContinentFilter] = useState(null);
   const [selectedCountry, setselectedCountry] = useState(null);
-  console.log(selectedCountry)
+  
 
   const filteredCountries = Data.filter(
     (country) => continentFilter === null || country.region === continentFilter
   ).filter((country) =>
-    searchcountry === ""
-      ? true
-      : country.name.toLowerCase().includes(searchcountry) ||
-        country.capital.toLowerCase().includes(searchcountry)
+    searchcountry === "" || 
+    country.name.toLowerCase().includes(searchcountry) ||
+    country.capital.toLowerCase().includes(searchcountry)
   );
     const allAlpha3codes =
      Data.map(country => setselectedCountry[{name:country.name,alpha3Code:country.alpha3Code}]);
