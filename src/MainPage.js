@@ -9,7 +9,7 @@ import Search from "./Search";
 const MainPAge = () => {
   const [searchcountry, setSearchCountry] = useState("");
   const [continentFilter, setContinentFilter] = useState(null);
-  const [selectedCountry, setselectedCountry] = useState(null);
+  const [selectedCountry, setSelectedCountry] = useState(null);
   
 
   const filteredCountries = Data.filter(
@@ -19,9 +19,10 @@ const MainPAge = () => {
     country.name.toLowerCase().includes(searchcountry) ||
     country.capital.toLowerCase().includes(searchcountry)
   );
-    const allAlpha3codes =
-     Data.map(country => setselectedCountry[{name:country.name,alpha3Code:country.alpha3Code}]);
-    console.log(allAlpha3codes);
+
+  // const allAlpha3codes =
+  // Data.map(country => setSelectedCountry[{name:country.name,alpha3Code:country.alpha3Code}]);
+  
 
   let mainContent;
   if (selectedCountry === null) {
@@ -39,7 +40,7 @@ const MainPAge = () => {
 
         <Countries
           countries={filteredCountries}
-          setselectedCountry={setselectedCountry}
+          setSelectedCountry={setSelectedCountry}
         />
       </div>
     );
@@ -51,8 +52,8 @@ const MainPAge = () => {
       <CountryInfo
         country={selectedCountry}
         borderCountries = {borderCountries}
-        showAllCountries={() => setselectedCountry(null)}
-        showBorderCountry = {setselectedCountry}
+        showAllCountries={() => setSelectedCountry(null)}
+        showBorderCountry = {setSelectedCountry}
       />
     );
   }
