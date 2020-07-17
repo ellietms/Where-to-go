@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-const Countries = ({ countries, setSelectedCountry}) => {
+const Countries = ({countries,setSelectedCountry}) => {
   return (
     <div className="container">
       <div className="row">

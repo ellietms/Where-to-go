@@ -21,7 +21,7 @@ const CountryInfo = ({
           </button>
         </div>
         <div className="image-container mt-5">
-          <img className="countryImg" src={country.flag} />
+          <img className="countryImg" src={country.flag}  alt="country"/>
         </div>
         <div className="information-country">
           <h5 className="mt-xs-4 pt-sm-4 mt-sm-4 mt-md-3 mt-lg-3 m-auto">
