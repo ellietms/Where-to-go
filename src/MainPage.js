@@ -17,8 +17,8 @@ const MainPAge = () => {
     (country) => continentFilter === null || country.region === continentFilter
   ).filter((country) =>
     searchcountry === "" || 
-    country.name.toLowerCase().includes(searchcountry) ||
-    country.capital.toLowerCase().includes(searchcountry)
+    country.name.toLowerCase().includes(searchcountry.toLowerCase()) ||
+    country.capital.toLowerCase().includes(searchcountry.toLowerCase())
   );
 
   let mainContent;
