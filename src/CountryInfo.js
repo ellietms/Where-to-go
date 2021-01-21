@@ -8,6 +8,25 @@ const CountryInfo = ({
   showAllCountries,
   showBorderCountry,
 }) => {
+  let borders;
+  console.log(borderCountries)
+  if(borderCountries.length !== 0){
+    borders = (
+      borderCountries.map((country) => (
+        <button
+          className="border-buttons"
+          onClick={() => showBorderCountry(country)}
+        >
+          {country.name} 
+        </button>
+      ))
+    )
+  }
+  else{
+    borders = (
+      <p>No Borders</p>
+    )
+  }
   return (
     <div className="container">
       <div className="info-page">
@@ -77,14 +96,7 @@ const CountryInfo = ({
                   class="mt-sm-1 mt-md-0 d-sm-flex 
                     flex-md-column flex-lg-row d-lg-inline-flex"
                 >
-                  {borderCountries.map((country) => (
-                    <button
-                      className="border-buttons"
-                      onClick={() => showBorderCountry(country)}
-                    >
-                      {country.name}
-                    </button>
-                  ))}
+                  {borders}
                 </div>
               </div>
             </div>
