@@ -2,10 +2,6 @@ body{
   background-color: rgb(234, 234, 241);
 }
 
-.App {
-  text-align: center;
-}
-
 .navbar-head{
    height: 80px;
    font-weight: bolder;
@@ -118,13 +114,41 @@ i{
   margin-right: 20px;
   margin-left: 0;
   height: 370px;
+  width: 500px;
 }
 
 .information-country{
   display: flex;
+  flex-direction: column;
   margin-top: 2rem;
 }
 
 .country-details{
   margin-top: 2rem;
+}
+
+.border-buttons{
+  border: 5px rgb(133, 60, 42) solid;
+  margin-right: 10px;
+  border-radius: 20%;
+}
+
+.border-buttons:hover{
+  color: rgb(98, 90, 90);
+}
+
+.country-name{
+  border: 5px rgb(133, 60, 42) solid;
+  width: fit-content;
+  height: fit-content;
+  padding: 4px 4px;
+  border-radius: 20%;
+}
+
+.back-button{
+  border: 5px rgb(134, 63, 53) solid;
+  width: fit-content;
+  height: fit-content;
+  padding: 4px 4px;
+  border-radius: 20%;
 }
